@@ -1,5 +1,6 @@
 import random
 import numpy as np
+
 try:
     from _sampler import sample_disk
 except ImportError: # unable to import c++ version of SampleData
@@ -7,6 +8,7 @@ except ImportError: # unable to import c++ version of SampleData
     print("Unable to import c++ implementation of sampler")
     print("Defaulting to pure python implementation")
     print("Note: Python implementation is much slower")
+
 
 class DiskSampler:
     def __init__(self, batch_size, data_source, num_rows=None, headers=False):
