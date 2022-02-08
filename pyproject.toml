@@ -1,0 +1,6 @@
+[build-system]
+requires = [
+    "numpy",
+    "pybind11"
+]
+build-backend = "setuptools.build_meta"
