@@ -33,7 +33,15 @@ std::vector<std::string> sample_data(std::string file_name, std::vector<int> sam
 
 }
 
-PYBIND11_MODULE(SampleData, m) {
-    m.doc() = "Samples data from csv file";
-    m.def("SampleData", &SampleData, "Samples data from csv file");
+PYBIND11_MODULE(_sample_data, m) {
+    m.doc() = "Samples data from csv file. Pure cpp implementation.\
+              Params:\
+                std::string file_name\
+                    The location of the data file ex. data/data_file.csv\
+                std::vector<int> sample_idx\
+                    Vector of indexes of rows to sample from data file\
+              Returns:\
+                std::vector<std::string> samples\
+                    Vector of sampled rows from data file ";
+    m.def("sample_data", &sample_data, "Samples data from csv file");
 }
