@@ -1,6 +1,6 @@
 # Pure python implementation of SampleData.cpp
 
-def sample_data(file_name, sample_idx):
+def sample_disk(file_name, sample_idx):
     """
     Samples data on disk
 
@@ -14,13 +14,13 @@ def sample_data(file_name, sample_idx):
             A list of samples rows from the data file
     """
     target_sample_size = len(sample_idx)
-    sample = []
+    sampled = []
 
     with open(file_name) as data_file:
         for line, line_num in enumerate(data_file):
             if line_num in sample_idx:
-                sample.append(line)
+                sampled.append(line)
             # Early stopping prevents excessive file reading
-            if len(sample) == target_sample_size:
-                return sample
+            if len(sampled) == target_sample_size:
+                return sampled
 

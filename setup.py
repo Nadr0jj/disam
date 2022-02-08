@@ -9,7 +9,7 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE/"README.md").read_text()
 
 ext_modules = [
-        Pybind11Extension("disam", ["src/_sample_data.cpp"])
+        Pybind11Extension("disam", ["src/_sampler.cpp"])
         ]
 
 setup(
@@ -17,7 +17,7 @@ setup(
         version="1.0.0",
         description="Implements sampling from disk for large datasets",
         url="https://github.com/Nadr0jj/disam",
-        install_requires=["numpy", "pybind11"],
+        install_requires=["numpy", "pybind11", "setuptools"],
         ext_modules=ext_modules)
 
 

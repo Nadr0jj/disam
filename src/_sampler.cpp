@@ -6,7 +6,7 @@
 #include <vector>
 #include <list>
 
-std::vector<std::string> sample_data(std::string file_name, std::vector<int> sample_idx){
+std::vector<std::string> sample_disk(std::string file_name, std::vector<int> sample_idx){
 
     int sample_size = sample_idx.size();
     std::vector<std::string> samples; // To be returned
@@ -33,7 +33,7 @@ std::vector<std::string> sample_data(std::string file_name, std::vector<int> sam
 
 }
 
-PYBIND11_MODULE(_sample_data, m) {
+PYBIND11_MODULE(_sampler, m) {
     m.doc() = "Samples data from csv file. Pure cpp implementation.\
               Params:\
                 std::string file_name\
@@ -43,5 +43,5 @@ PYBIND11_MODULE(_sample_data, m) {
               Returns:\
                 std::vector<std::string> samples\
                     Vector of sampled rows from data file ";
-    m.def("sample_data", &sample_data, "Samples data from csv file");
+    m.def("sample_disk", &sample_disk, "Samples data from csv file");
 }

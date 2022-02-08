@@ -1,10 +1,10 @@
 import random
 import numpy as np
 try:
-    from _sample_data import sample_data
+    from _sampler import sample_disk
 except ImportError: # unable to import c++ version of SampleData
-    from sample_data import sample_data
-    print("Unable to import c++ implementation of data sampler")
+    from sampler import sample_disk
+    print("Unable to import c++ implementation of sampler")
     print("Defaulting to pure python implementation")
     print("Note: Python implementation is much slower")
 
@@ -58,7 +58,7 @@ class DiskSampler:
         else:
             sample_idx = sorted(random.sample(range(self.num_rows), self.batch_size))
 
-        data = sample_data(self.data_source, sample_idx)
+        data = sample_disk(self.data_source, sample_idx)
         data = np.array([list(map(float, line.split(delim))) for line in data]) 
                             
         if last_col_is_y:
