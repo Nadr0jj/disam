@@ -17,11 +17,13 @@ class DiskSampler:
         of loading the entirety of the data you want to work with into memory
 
         Params:
-            file_path:string
+            batch_size:int
+                The number of rows from the data file to draw for each sample
+            data_source:str
                 File path to data source.
             num_rows:int (optional)(default val = None)
                 If a value is supplied set self.data_size = num_rows
-            headers:bool
+            headers:bool (optional)(default val = False)
                 Determines whether underlying data has first row consisting
                 of non-data values (such as column names)
 
