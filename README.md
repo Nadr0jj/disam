@@ -1,5 +1,5 @@
 # disam
-disam is a package for on-**di**sk **sam**pling with a C++ backend (and a pure python fallback). The intended use case for disam is when datasets cannot be loaded in to memory either due to size or memory constraints.
+disam is a Python package for on-**di**sk **sam**pling with a C++ backend (and a pure Python fallback). The intended use case for disam is when datasets cannot be loaded in to memory either due to size or memory constraints.
 
 ## A simple example
 
